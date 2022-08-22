@@ -4,7 +4,7 @@ class MonstersController < ApplicationController
   end
 
   def new
-    @monster = Mosnter.new
+    @monster = Monster.new
   end
 
   def show
