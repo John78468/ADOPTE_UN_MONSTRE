@@ -5,12 +5,9 @@ class ContractsController < ApplicationController
   def new
   end
 
-  def edit
+  def create
   end
 
   def update
-  end
-
-  def destroy
   end
 end
