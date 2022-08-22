@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :monsters
-  has_many :monsters, through: :contracts
+  has_many :contracts
+  has_many :enlist_monsters, through: :contracts, source: :monster
 
   validates :name, :email, :password, presence: true
 end
