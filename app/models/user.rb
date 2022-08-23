@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :monsters
   has_many :contracts
-  has_many :selected_monsters, through: :contracts, source: :monster #monstres reservés par moi
-  has_many :enlisted_monsters, through: :monsters, source: :contract #monstres sur lesquels j'ai des réservations
 
+  has_many :enlisted_monsters, through: :monsters, source: :contracts # monstres sur lesquels j'ai des réservations
 end

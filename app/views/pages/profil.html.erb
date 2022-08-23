@@ -8,7 +8,7 @@
 
 <h2><strong>Mes Contrats</strong></h2>
 
-
+<style>.enlist { color:red }</style>
 
 <h2><strong>Mes Monstres</strong></h2>
 <p>Add</p>
@@ -16,11 +16,13 @@
   <p>No monsters</p>
 <% else %>
   <% @user.monsters.each do |monster|%>
-    <% if monster.include?(@user.enlisted_monster) %>
-      <% class_monster = "monstre enlisted" %>
-    <% else %>
-      <% class_monster = "monstre" %>
+    <% @user.enlisted_monsters.each do |contract| %>
+<% if contract.monster_id == monster.id && contract.actif == true %>
+      <% class_monster = "enlist monster" %>
+      <% else %>
+        <% class_monster = "monster" %>
+      <% end %>
+      <p class="<%= class_monster %>"><%= monster.name %></p>
     <% end %>
-    <p class="<%= class_monster %>"><%= monster.name %></p>
   <% end %>
 <% end %>
