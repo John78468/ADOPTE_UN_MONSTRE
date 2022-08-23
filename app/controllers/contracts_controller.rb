@@ -1,17 +1,18 @@
 class ContractsController < ApplicationController
   def create
     @contract = Contract.new(contract)
-    @contract.user = @user
+    @contract.user = current_user
+    @contract.monster = Monster.find(params[:monster_id])
     if @contract.save
-      redirect_to profil_path(@user)
+      redirect_to profil_path(current_user)
     else
-      render :new, status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
   def update
-    @contract = Contract.update(contract_params)
-    redirect_to profil_path(@user)
+    @contract.update(contract_params)
+    redirect_to profil_path(current_user)
   end
 
   private
