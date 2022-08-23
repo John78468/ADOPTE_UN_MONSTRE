@@ -1,2 +1,10 @@
 <h1>Monsters#new</h1>
 <p>Find me in app/views/monsters/new.html.erb</p>
+<%= simple_form_for @monster do |f| %>
+  <%= f.input :name, label: "nom" %>
+  <%= f.input :specie, label: "espece" %>
+  <%= f.input :description, label: "description"%>
+  <%= f.input :price, label: "prix"%>
+  <%= f.input :image, as: :file   %>
+  <%= f.button :submit %>
+<% end %>
