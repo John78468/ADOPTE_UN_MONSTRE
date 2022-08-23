@@ -131,15 +131,6 @@ new_contract = Contract.create!(
   #   user_id: new_user.id
   # )
 
-  # new_monster = Monster.create!(
-  #   name: Faker::Games::Pokemon.name,
-  #   specie: Faker::Fantasy::Tolkien.race,
-  #   description: Faker::Fantasy::Tolkien.poem,
-  #   image: "https://loremflickr.com/150/150/abstract",
-  #   price: Faker::Commerce.price(range: 0..10.0, as_string: true),
-  #   user_id: new_user.id
-  # )
-
 # new_contract = Contract.create!(
 #     battles: Faker::Commerce.price(range: 0..5),
 #     boolean: true,
