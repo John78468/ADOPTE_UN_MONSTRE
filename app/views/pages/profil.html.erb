@@ -17,7 +17,7 @@
 <% else %>
   <% @user.monsters.each do |monster|%>
     <% @user.enlisted_monsters.each do |contract| %>
-      <% if contract.monster_id == monster.id %>
+      <% if contract.monster_id == monster.id && contract.actif == true %>
         <% class_monster = "enlist monster" %>
       <% else %>
         <% class_monster = "monster" %>
