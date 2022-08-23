@@ -1,2 +1,11 @@
 <h1>Monsters#index</h1>
 <p>Find me in app/views/monsters/index.html.erb</p>
+
+<% @monsters.each do |monster| %>
+    <br>
+    <ul>
+    <%= link_to monster_path(monster) do %>
+    <%= monster.name %>
+    </ul>
+  <% end %>
+<% end %>
