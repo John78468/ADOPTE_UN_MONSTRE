@@ -5,7 +5,6 @@ class PagesController < ApplicationController
 
   def profil
     @user = User.find(params[:id])
-
   end
 
   def profil_update
