@@ -13,9 +13,14 @@
 <h2><strong>Mes Monstres</strong></h2>
 <p>Add</p>
 <% if @user.monsters.first.nil? %>
-<p>No monsters</p>
+  <p>No monsters</p>
 <% else %>
 <% @user.monsters.each do |monster|%>
-<p><%= monster.name %> </p>
+<% if monster.include?(@user.enlisted_monster) %>
+  <% class_monster = "enlisted" %>
+<% else %>
+  <% class_monster = "" %>
+  <p><%= monster.name %> </p>
+  <% end %>
 <% end %>
 <% end %>

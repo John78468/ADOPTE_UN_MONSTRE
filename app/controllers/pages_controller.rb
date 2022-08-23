@@ -9,5 +9,10 @@ class PagesController < ApplicationController
   end
 
   def profil_update
+    if @user.update(user_params)
+      redirect_to profil_path(@user)
+    else
+      render :profil, status: :unprocessable_entity
+    end
   end
 end
