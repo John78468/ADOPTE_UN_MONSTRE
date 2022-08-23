@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'profil/:id', to: 'pages#profil'
+  get 'profil/:id', to: 'pages#profil', as: :profil
   patch 'profil/:id', to: 'pages#profil_update'
   resources :monsters do
     resources :contracts, only: :create
