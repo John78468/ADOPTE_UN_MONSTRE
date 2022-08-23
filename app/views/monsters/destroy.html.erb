@@ -1,2 +1,15 @@
-<h1>Monsters#destroy</h1>
+<h1><%= @monster.name%></h1>
+<%= @monster.contracts.each do |contrat| %>
+<%= @monster.specie %>
+<%= @monster.description %>
+<%= @monster.price %>
+<%= @monster.image %>
+<%= end %>
+
 <p>Find me in app/views/monsters/destroy.html.erb</p>
+<%= link_to "delete",
+  monster_path(@monster)
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<%= link_to "retour", monsters_path %>
+<%= link_to "ajouter location monstre", new_monster_path(@monster) %>
