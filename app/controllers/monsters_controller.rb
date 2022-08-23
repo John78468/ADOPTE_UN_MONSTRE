@@ -8,9 +8,10 @@ class MonstersController < ApplicationController
   end
 
   def create
-    @monster = Monster.new
+    @monster = Monster.new(monster_params)
+    @monster.user = current_user
     if @monster.save
-      redirect_to monster_path
+      redirect_to monster_path(@monster)
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,20 +26,18 @@ class MonstersController < ApplicationController
   end
 
   def update
-    @monster = Monster.find(monster_params)
     if @monster.update
-      redirecto_to monster_path
+      redirect_to monster_path
     else
       render :update, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @monster = Monster.find(monster_params)
-    if @monster.destroy
-      redirecto_to monsters_path
-    else
-      render :destroy, status: :unprocessable_entity
+    @monster = Monster.find(params[:id])
+    if @monster.present?
+      @monster.destroy
+      redirect_to monsters_path, status: :see_other
     end
   end
 

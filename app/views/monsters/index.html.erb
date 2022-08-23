@@ -3,9 +3,9 @@
 
 <% @monsters.each do |monster| %>
     <br>
-    <ul>
     <%= link_to monster_path(monster) do %>
-    <%= monster.name %>
+    <ul>
+      <%= monster.name %>
     </ul>
   <% end %>
 <% end %>

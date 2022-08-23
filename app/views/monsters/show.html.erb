@@ -2,8 +2,9 @@
 <p>Find me in app/views/monsters/show.html.erb</p>
 
 <%= link_to "delete",
-  monster_path(@monster)
+  monster_path(@monster),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
 <%= link_to "retour", monsters_path %>
 <%= link_to "ajouter location monstre", new_monster_path(@monster) %>
+<%= @monster.name %>
