@@ -1,10 +1,30 @@
-<h1>Monsters#show</h1>
-<p>Find me in app/views/monsters/show.html.erb</p>
+<div class="container" style="text-align: center">
+  <div class="container-monster-infos" style="border: 1px solid black; border-radius: 5px; padding: 20px">
+    <h1><%= @monster.name %></h1>
+    <p>Espèce : <%= @monster.specie %></p>
+    <p>Description : <%= @monster.description %></p>
+    <p>IMAGE DU MONSTRE</p>
+    <p>Coût : <%= @monster.price %></p>
+  </div><br>
 
-<%= link_to "delete",
-  monster_path(@monster),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-<%= link_to "retour", monsters_path %>
-<%= link_to "ajouter location monstre", new_monster_path(@monster) %>
-<%= @monster.name %>
+  <div class="buttons">
+    <div class="btn-location" style="border: 1px solid black; border-radius: 5px; padding: 10px; background-color: whitesmoke;text-decoration: none">
+      <%= link_to "Louer le monstrer", new_monster_path(@monster) %>
+    </div>
+
+    <br>
+
+    <div class="btn-annulation" style="border: 1px solid black; border-radius: 5px; padding: 10px; background-color: whitesmoke;text-decoration: none">
+      <%= link_to "Annuler la location",
+        monster_path(@monster),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
+
+    <br>
+
+    <div class="btn-retour" style="border: 1px solid black; border-radius: 5px; padding: 10px; background-color: whitesmoke;text-decoration: none">
+      <%= link_to "Retour", monsters_path %>
+    </div>
+  </div>
+</div>
