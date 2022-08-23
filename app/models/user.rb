@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_one_attached :avatar
   has_many :monsters
   has_many :contracts
   has_many :enlisted_monsters, through: :monsters, source: :contracts # monstres sur lesquels j'ai des réservations
