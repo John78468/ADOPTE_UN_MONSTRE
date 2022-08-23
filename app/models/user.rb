@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :selected_monsters, through: :contracts, source: :monster #monstres reservés par moi
   has_many :enlisted_monsters, through: :monsters, source: :contract #monstres sur lesquels j'ai des réservations
 
-  validates :name, presence: true
 end
