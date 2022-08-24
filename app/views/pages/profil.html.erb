@@ -1,4 +1,4 @@
-<h1>profil</h1>
+<h1>Mon profil</h1>
 <p><strong>name : </strong><%= @user.name %>
 <p></p>
    <strong>email : </strong> <%= @user.email %></p>
@@ -6,27 +6,22 @@
 
 <img id="avatar-profil" src="<%= @user.avatar %>" alt="">
 
-<%= link_to decline_path(@contract) %>
-
-
 <style>.enlist { color:red }</style>
 
 <div class="card-product">
   <h2><strong>Mes Contrats</strong></h2>
     <div class="border my-3 p-5">
-      <%= image_tag "contrat.jpeg" , width:"250px"  %>
+      <ul>
         <% @user.contracts.each do |contract| %>
-        <% if user.contract == contract.actif == true %>
-
+          <% if contract.actif == true %>
+            <li><%= contract.monster.name %> - <%= link_to 'decline', decline_path(contract) %></li>
+          <% end %>
         <% end %>
-      </div>
-      </div>
-    <% end %>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
+      </ul>
+    </div>
+</div>
 
 <h2><strong>Mes Monstres</strong></h2>
-<p>Add</p>
 
 <% if @user.monsters.first.nil? %>
   <p>No monsters</p>
