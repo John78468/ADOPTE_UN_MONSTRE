@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'profil/:id', to: 'pages#profil', as: :profil
   patch 'profil/:id', to: 'pages#profil_update'
   resources :monsters do
-    resources :contracts, only: :create
+    resources :contracts, only: [:create, :new]
   end
   patch '/profil/:user_id/contracts/:id', to: 'contracts#update'
 end
