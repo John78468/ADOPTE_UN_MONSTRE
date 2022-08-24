@@ -15,6 +15,12 @@ class ContractsController < ApplicationController
     redirect_to profil_path(current_user)
   end
 
+  def decline
+    @contract = contract.find(params[:id])
+    @contract.actif = false
+    @contract.save
+  end
+
   private
 
   def contract_params
