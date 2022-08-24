@@ -2,12 +2,32 @@
 <p><strong>name : </strong><%= @user.name %>
 <p></p>
    <strong>email : </strong> <%= @user.email %></p>
-   <!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Edit</button>
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+<img id="avatar-profil" src="<%= @user.avatar %>" alt="">
+
+<h2><strong>Mes Contrats</strong></h2>
+
+<style>.enlist { color:red }</style>
+
+<h2><strong>Mes Monstres</strong></h2>
+<p>Add</p>
+<% if @user.monsters.first.nil? %>
+  <p>No monsters</p>
+<% else %>
+  <% @user.monsters.each do |monster|%>
+    <% @user.enlisted_monsters.each do |contract| %>
+      <% if contract.monster_id == monster.id && contract.actif == true %>
+        <% class_monster = "enlist monster" %>
+      <% else %>
+        <% class_monster = "monster" %>
+      <% end %>
+      <p class="<%= class_monster %>"><%= monster.name %></p>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -34,34 +54,4 @@
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
-<% end %>
-
-    </div>
-  </div>
-</div>
-
-
-
-
-<img id="avatar-profil" src="<%= @user.avatar %>" alt="">
-
-<h2><strong>Mes Contrats</strong></h2>
-
-<style>.enlist { color:red }</style>
-
-<h2><strong>Mes Monstres</strong></h2>
-<p>Add</p>
-<% if @user.monsters.first.nil? %>
-  <p>No monsters</p>
-<% else %>
-  <% @user.monsters.each do |monster|%>
-    <% @user.enlisted_monsters.each do |contract| %>
-      <% if contract.monster_id == monster.id && contract.actif == true %>
-        <% class_monster = "enlist monster" %>
-      <% else %>
-        <% class_monster = "monster" %>
-      <% end %>
-      <p class="<%= class_monster %>"><%= monster.name %></p>
-    <% end %>
-  <% end %>
 <% end %>

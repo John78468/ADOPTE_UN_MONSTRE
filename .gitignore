@@ -41,3 +41,7 @@
 *.swp
 .DS_Store
 .env*
+.env*
+coller dans .env => CLOUDINARY_URL=cloudinary://999267132441189:4zk8RcNOPbQoGWV9YFqFks5r-XY@didd5gcsw
+CLOUDINARY_URL=cloudinary://999267132441189:4zk8RcNOPbQoGWV9YFqFks5r-XY@didd5gcsw
+CLOUDINARY_URL=cloudinary://999267132441189:4zk8RcNOPbQoGWV9YFqFks5r-XY@didd5gcsw*
