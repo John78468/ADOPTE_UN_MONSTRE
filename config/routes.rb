@@ -8,6 +8,5 @@ Rails.application.routes.draw do
     resources :contracts, only: [:create, :new]
   end
   patch '/profil/:user_id/contracts/:id', to: 'contracts#update'
-  patch "decline", to: "contracts#decline", as: "decline"
-
+  get '/decline/:id', to: 'contracts#decline', as: 'decline'
 end
