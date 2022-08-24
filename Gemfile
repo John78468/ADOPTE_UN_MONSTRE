@@ -11,6 +11,7 @@ gem "sprockets-rails"
 
 # Use faker for the seed
 gem 'faker'
+# Use connect for facebook
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
