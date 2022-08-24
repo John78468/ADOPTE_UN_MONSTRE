@@ -1,11 +1,18 @@
-<h1>Monsters#index</h1>
-<p>Find me in app/views/monsters/index.html.erb</p>
+<%= image_tag "logobm.png" %>
 
-<% @monsters.each do |monster| %>
-    <br>
-    <%= link_to monster_path(monster) do %>
-    <ul>
-      <%= monster.name %>
-    </ul>
-  <% end %>
-<% end %>
+
+<div class="card-product">
+    <% @monsters.each do |monster| %>
+
+    <div class="border my-3 p-5 text-center">
+      <%= image_tag "goblin1.png" , width:"450px"  %>
+      <div class="card-product-infos">
+        <%= link_to monster_path(monster) do %>
+          <p class="display-5 text-decoration-none">
+            <%= monster.name %>
+          </p>
+        <% end %>
+      </div>
+      </div>
+    <% end %>
+  </div>
