@@ -8,9 +8,9 @@
 require 'faker'
 require "open-uri"
 
-User.destroy_all
-Monster.destroy_all
 Contract.destroy_all
+Monster.destroy_all
+User.destroy_all
 
 puts "Creating DataBase"
 puts "Creating Ilyes_user....bip bip....."
