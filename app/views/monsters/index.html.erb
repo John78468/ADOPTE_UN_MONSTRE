@@ -1,11 +1,12 @@
-<%= image_tag "logobm.png" %>
-
+<div class="text-center">
+  <%= image_tag('http://onepage.dropagence.fr/game/logobm.png', width:"750px") %>
+</div>
 
 <div class="card-product">
     <% @monsters.each do |monster| %>
 
     <div class="border my-3 p-5 text-center">
-      <%= image_tag "goblin1.png" , width:"450px"  %>
+      <%= image_tag('http://onepage.dropagence.fr/game/gobelin.png', width:"450px")  %>
       <div class="card-product-infos">
         <%= link_to monster_path(monster) do %>
           <p class="display-5 text-decoration-none">
