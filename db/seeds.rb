@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+require "open-uri"
 
 User.destroy_all
 Monster.destroy_all
@@ -13,94 +14,108 @@ Contract.destroy_all
 
 puts "Creating DataBase"
 puts "Creating Ilyes_user....bip bip....."
+
 # ilyes
-ilyes_user = User.create!(
+file = URI.open("https://loremflickr.com/150/150/abstract")
+ilyes_user = User.new(
   email: "ilyes@battle.com",
   password: "123456",
   name: "Ilyes",
   coin: Faker::Commerce.price(range: 0..10),
-  avatar: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657267400/l8cxfsospw728clpstkm.jpg"
 )
+ilyes_user.avatar.attach(io: file, filename: 'ilyes.png', content_type: 'image/png')
+ilyes_user.save!
 
-Monster.create!(
+ilyes_monster1 = Monster.new(
   name: Faker::Games::Pokemon.name,
   specie: Faker::Fantasy::Tolkien.race,
   description: Faker::Fantasy::Tolkien.poem,
-  image: "https://loremflickr.com/150/150/abstract",
+  price: Faker::Commerce.price(range: 0..10.0, as_string: true),
+  user_id: ilyes_user.id
+)
+ilyes_monster1.image.attach(io: file, filename: 'ilyes.png', content_type: 'image/png')
+ilyes_monster1.save
+
+ilyes_monster2 = Monster.new(
+  name: Faker::Games::Pokemon.name,
+  specie: Faker::Fantasy::Tolkien.race,
+  description: Faker::Fantasy::Tolkien.poem,
+  price: Faker::Commerce.price(range: 0..10.0, as_string: true),
+  user_id: ilyes_user.id
+)
+ilyes_monster2.image.attach(io: file, filename: 'ilyes.png', content_type: 'image/png')
+ilyes_monster2.save
+
+ilyes_monster3 = Monster.new(
+  name: Faker::Games::Pokemon.name,
+  specie: Faker::Fantasy::Tolkien.race,
+  description: Faker::Fantasy::Tolkien.poem,
   price: Faker::Commerce.price(range: 0..10.0, as_string: true),
   user_id: ilyes_user.id
 )
 
-Monster.create!(
-  name: Faker::Games::Pokemon.name,
-  specie: Faker::Fantasy::Tolkien.race,
-  description: Faker::Fantasy::Tolkien.poem,
-  image: "https://loremflickr.com/150/150/abstract",
-  price: Faker::Commerce.price(range: 0..10.0, as_string: true),
-  user_id: ilyes_user.id
-)
-
-Monster.create!(
-  name: Faker::Games::Pokemon.name,
-  specie: Faker::Fantasy::Tolkien.race,
-  description: Faker::Fantasy::Tolkien.poem,
-  image: "https://loremflickr.com/150/150/abstract",
-  price: Faker::Commerce.price(range: 0..10.0, as_string: true),
-  user_id: ilyes_user.id
-)
+ilyes_monster3.image.attach(io: file, filename: 'ilyes.png', content_type: 'image/png')
+ilyes_monster3.save
 
 puts "Profile Ilyes_user.......has been created."
 puts "Creating Jonathan_user....bip bip....."
 
 # Jonathan
-User.create!(
+john_user = User.new(
   email: "jonathan@battle.com",
   password: "123456",
   name: "Jonathan",
   coin: Faker::Commerce.price(range: 0..10),
-  avatar: "https://avatars.githubusercontent.com/u/73955607?v=4"
 )
+john_user.avatar.attach(io: file, filename: 'jonathan.png', content_type: 'image/png')
+john_user.save!
 
 puts "Profile Jonathan_user.......has been created."
 puts "Creating Thibault_user....bip bip....."
 
 # Thibault
-thibault_user = User.create!(
+thibault_user = User.new(
   email: "thibault@battle.com",
   password: "123456",
   name: "Thibault",
   coin: Faker::Commerce.price(range: 0..10),
-  avatar: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657103133/wtxjfxa6ufxukw9utksi.jpg"
 )
+thibault_user.avatar.attach(io: file, filename: 'thibault.png', content_type: 'image/png')
+thibault_user.save!
 
-thibault_monster1 = Monster.create!(
+thibault_monster1 = Monster.new(
   name: Faker::Games::Pokemon.name,
   specie: Faker::Fantasy::Tolkien.race,
   description: Faker::Fantasy::Tolkien.poem,
-  image: "https://loremflickr.com/150/150/abstract",
   price: Faker::Commerce.price(range: 0..10.0, as_string: true),
   user_id: thibault_user.id
 )
+thibault_monster1.image.attach(io: file, filename: 'ilyes.png', content_type: 'image/png')
+thibault_monster1.save
+
 puts "Profile Thibault_user.......has been created."
 puts "Creating Tarek_user....bip bip....."
 
 # Tarek
-tarek_user = User.create!(
+tarek_user = User.new(
   email: "tarek@battle.com",
   password: "123456",
   name: "Tarek",
   coin: Faker::Commerce.price(range: 0..10),
-  avatar: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1658123432/wg2ukkepzimi36b3186r.jpg"
 )
+tarek_user.avatar.attach(io: file, filename: 'tarek.png', content_type: 'image/png')
+tarek_user.save!
 
-tarek_monster1 = Monster.create!(
+tarek_monster1 = Monster.new(
   name: Faker::Games::Pokemon.name,
   specie: Faker::Fantasy::Tolkien.race,
   description: Faker::Fantasy::Tolkien.poem,
-  image: "https://loremflickr.com/150/150/abstract",
   price: Faker::Commerce.price(range: 0..10.0, as_string: true),
   user_id: tarek_user.id
 )
+tarek_monster1.image.attach(io: file, filename: 'ilyes.png', content_type: 'image/png')
+tarek_monster1.save
+
 puts "Profile Tarek_user.......has been created."
 
 Contract.create!(
