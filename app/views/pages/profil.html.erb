@@ -1,12 +1,9 @@
 
 <h1>Mon profil</h1>
-<p><strong>name : </strong><%= @user.name %>
-<p></p>
-   <strong>email : </strong> <%= @user.email %></p>
-   <p>Edit</p>
 
 <div id="profil-data" data-controller="modal">
   <p><strong>name : </strong><%= @user.name %>
+  <p></p>
   <strong>email : </strong> <%= @user.email %></p>
   <a id="button-edit" data-action="click->modal#open">Edit</a>
 
