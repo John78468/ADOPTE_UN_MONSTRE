@@ -11,12 +11,10 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <%= render 'layouts/header' if !current_page?(root_path) %>
     <div class="container py-5">
       <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
     </div>
-    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' if !current_page?(root_path)%>
   </body>
 </html>
