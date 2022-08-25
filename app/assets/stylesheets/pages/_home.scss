@@ -32,6 +32,9 @@
 #navbarDropdown {
   cursor: pointer;
 }
+#navbarDropdown, li{
+  list-style-type: none;
+}
 
 #voir-monstre{
   color: white;
