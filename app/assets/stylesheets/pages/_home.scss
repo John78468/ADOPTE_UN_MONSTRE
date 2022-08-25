@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
 .display-2{
 
   margin: 25px auto;
@@ -24,16 +26,35 @@
 .navbar{
   position: relative;
   background: #499A90;
+  box-shadow: 0px 3px 20px 0px #499A90;
 }
 
 #navbarDropdown {
   cursor: pointer;
 }
 
-#voir-monstre a{
+#voir-monstre{
   color: white;
+  font-family: teko, sans-serif;
+  font-size: 22px;
+  display: inline-block;
+  position: relative;
 }
 
-.pe-3{
-  font-family: cursive;
+#voir-monstre:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F7A71E;
+  transform-origin: bottom right;
+  transition: transform 0.15s ease-out;
+}
+
+#voir-monstre:hover:after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
