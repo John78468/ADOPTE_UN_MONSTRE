@@ -8,7 +8,8 @@
 
 <style>.enlist { color:red }</style>
 
-<div class="card-product">
+<% if @user.contracts.where(actif: true).count > 0 %>
+<div class="card-product"  >
   <h2><strong>Mes Contrats</strong></h2>
     <div class="border my-3 p-5">
       <ul>
@@ -20,6 +21,7 @@
       </ul>
     </div>
 </div>
+<% end %>
 
 <h2><strong>Mes Monstres</strong></h2>
 
@@ -27,13 +29,12 @@
   <p>No monsters</p>
 <% else %>
   <% @user.monsters.each do |monster|%>
+    <% class_monster = "monster" %>
     <% @user.enlisted_monsters.each do |contract| %>
       <% if contract.monster_id == monster.id && contract.actif == true %>
         <% class_monster = "enlist monster" %>
-      <% else %>
-        <% class_monster = "monster" %>
       <% end %>
-      <p class="<%= class_monster %>"><%= monster.name %></p>
     <% end %>
+      <p class="<%= class_monster %>"><%= monster.name %></p>
   <% end %>
 <% end %>
