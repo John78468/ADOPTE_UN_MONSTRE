@@ -16,7 +16,17 @@
   <h2><strong>Mes Contrats</strong></h2>
     <div class="border my-3 p-5">
       <ul>
-        <% @user.contracts.each do |contract| %>
+        <div class="display-cards">
+          <% @user.contracts.each do |contract| %>
+          <div class="card_container">
+            <div class="card">
+              <img src="http://onepage.dropagence.fr/game/place/golem-1-1.png" alt="Golem" width="180px" height="180px">
+              <div class="monster-info">
+                <span class="monster-info-top">Durdur</span>
+                <span class="monster-info-bottom">Lv 2 - 12pc</span>
+              </div>
+            </div>
+          </div>
           <% if contract.actif == true %>
             <li><%= contract.monster.name %> - <%= link_to 'decline', decline_path(contract) %></li>
           <% end %>
