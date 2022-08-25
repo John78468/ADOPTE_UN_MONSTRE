@@ -7,7 +7,7 @@
   <strong>email : </strong> <%= @user.email %></p>
   <a id="button-edit" data-action="click->modal#open">Edit</a>
 
-  <img id="avatar-profil" src="<%= @user.avatar %>" alt="">
+  <%= cl_image_tag @user.avatar.key  %>
 
   <div class="modal" data-modal-target="modal">
     <a data-action="click->modal#close">X</a>
