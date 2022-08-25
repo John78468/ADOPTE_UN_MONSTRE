@@ -10,3 +10,91 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// GLOBALES
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+// Tarek : _home
+
+.display-2 {
+  margin: 25px auto;
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 50px;
+}
+
+.logo-navbar {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 100%;
+  left: 50%;
+  height: 150px;
+  width: 200px;
+  object-fit: contain;
+  transition: all 0.1s ease-in;
+  &:hover{
+    height: 200px;
+    width: 210px;
+  }
+}
+
+.navbar {
+  position: relative;
+  background: #499A90;
+}
+
+#navbarDropdown {
+  cursor: pointer;
+}
+
+#voir-monstre a {
+  color: white;
+}
+
+.pe-3 {
+  font-family: cursive;
+}
+
+// Tarek : _footer
+
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+.logo-footer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  // top: 480%;
+  left: 50%;
+  height: 105px;
+  width: 200px;
+  object-fit: contain;
+}

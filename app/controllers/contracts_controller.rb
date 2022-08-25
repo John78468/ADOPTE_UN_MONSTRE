@@ -20,14 +20,14 @@ class ContractsController < ApplicationController
       user.save
       redirect_to profil_path(user)
     else
-      redirect_to monster_path(monster), alert: "Voius n'avez pas assez de pogs !"
+      redirect_to monster_path(monster), alert: "Vous n'avez pas assez de pogs !"
     end
   end
 
-  def update
-    @contract.update(contract_params)
-    redirect_to profil_path(current_user)
-  end
+  # def update
+  #   @contract.update(contract_params)
+  #   redirect_to profil_path(current_user)
+  # end
 
   def decline
     @contract = Contract.find(params[:id])
@@ -41,5 +41,4 @@ class ContractsController < ApplicationController
   def contract_params
     params.require(:contract).permit(:battles, :actif, :user_id, :monster_id)
   end
-
 end
