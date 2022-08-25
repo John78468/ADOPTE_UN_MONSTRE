@@ -51,7 +51,22 @@ class MonstersController < ApplicationController
     end
   end
 
+  def off
+    activate(false)
+  end
+
+  def on
+    activate(true)
+  end
+
   private
+
+  def activate(val)
+    @monster = Monster.find(params[:id])
+    @monster.actif = val
+    @monster.save
+    redirect_to profil_path(current_user)
+  end
 
   def monster_params
     params.require(:monster).permit(:name, :specie, :description, :image, :price)

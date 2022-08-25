@@ -16,6 +16,7 @@
         <% @user.contracts.each do |contract| %>
           <% if contract.actif == true %>
             <li><%= contract.monster.name %> - <%= link_to 'decline', decline_path(contract) %></li>
+            <li>durée restante: <%= contract.battles %></li>
           <% end %>
         <% end %>
       </ul>
@@ -29,12 +30,19 @@
   <p>No monsters</p>
 <% else %>
   <% @user.monsters.each do |monster|%>
-    <% class_monster = "monster" %>
+    <% monster_status = monster.actif.to_s %>
     <% @user.enlisted_monsters.each do |contract| %>
       <% if contract.monster_id == monster.id && contract.actif == true %>
-        <% class_monster = "enlist monster" %>
+        <% monster_status = "contrat" %>
       <% end %>
     <% end %>
-      <p class="<%= class_monster %>"><%= monster.name %></p>
+      <p><%= monster.name %></p>
+      <% if  monster_status == "true" %>
+        <p><%= link_to 'off',  monster_off_path(monster) %></p>
+      <% elsif  monster_status == "false" %>
+        <p><%= link_to 'on',  monster_on_path(monster) %></p>
+      <% elsif  monster_status == "contrat" %>
+        <p>Sous contrat</p>
+      <% end %>
   <% end %>
 <% end %>
