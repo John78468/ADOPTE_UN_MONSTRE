@@ -16,6 +16,7 @@
         <% @user.contracts.each do |contract| %>
           <% if contract.actif == true %>
             <li><%= contract.monster.name %> - <%= link_to 'decline', decline_path(contract) %></li>
+            <li>durée restante: <%= contract.battles %></li>
           <% end %>
         <% end %>
       </ul>
