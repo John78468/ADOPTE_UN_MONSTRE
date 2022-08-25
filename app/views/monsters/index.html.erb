@@ -1,31 +1,43 @@
-<div class="text-center">
-  <%= image_tag('http://onepage.dropagence.fr/game/place/logo-mp.png', width:"750px") %>
+<div class="accroche">
+  <h1>Choisissez votre futur Battle Monsters !</h1>
+  <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
 </div>
 
-<form action="/monsters" method="get" class="d-flex">
-  <select name="specie" id="specie-select" class="">
-      <option value="">Tous</option>
-      <option value="golem">Golem</option>
-      <option value="garou">Garou</option>
-      <option value="troll">Troll</option>
-  </select>
-  <div class="form-example">
-    <input type="submit" value="Subscribe!">
-  </div>
-</form>
+<div class="display-form">
+  <form action="/monsters" method="get" class="d-flex">
+    <select name="specie" id="specie-select" class="">
+        <option value="">Tous</option>
+        <option value="golem">Golem</option>
+        <option value="garou">Garou</option>
+        <option value="troll">Troll</option>
+    </select>
+    <div class="form-example">
+      <input type="submit" value="Filter par espèce">
+    </div>
+  </form>
+</div>
 
 <div class="display-cards">
   <% @monsters.each do |monster| %>
-    <div class="card_container">
-      <div class="card">
-        <%= cl_image_tag(monster.image.key, width:"180px") %>
-        <div class="monster-info">
-          <span class="monster-info-top"><%= monster.name %></span>
-          <span class="monster-info-bottom">Lv <%= monster.level %> - <%= monster.price %> pc</span>
+    <%= link_to monster_path(monster) do %>
+
+      <% class_contrat = "contrat-non" %>
+      <% owner = User.find(monster.user_id) %>
+      <% owner.enlisted_monsters.each do |contract| %>
+        <% if contract.monster_id == monster.id && contract.actif == true %>
+          <% class_contrat = "contrat-oui" %>
+        <% end %>
+      <% end %>
+
+      <div class="card_container <%= class_contrat %>">
+        <div class="card" style='background-image: url("http://onepage.dropagence.fr/game/place/game-background-<%= rand(1..5) %>.png");'>
+          <%= cl_image_tag(monster.image.key, width:"180px") %>
+          <div class="monster-info">
+            <span class="monster-info-top"><%= monster.name %></span>
+            <span class="monster-info-bottom">Lv <%= monster.level %> - <%= monster.price %> pc</span>
+          </div>
         </div>
-          <%#= link_to monster_path(monster) do %>
-          <%# end %>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

@@ -5,6 +5,10 @@
 	padding: 10px 15px;
 }
 
+.contrat-oui {
+  filter: grayscale(100%);
+}
+
 .card_container {
   position: relative;
   width: 100%;
@@ -21,7 +25,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url("http://onepage.dropagence.fr/game/place/game-background-1.png");
   background-size: cover;
   text-align: center;
   display: flex;
