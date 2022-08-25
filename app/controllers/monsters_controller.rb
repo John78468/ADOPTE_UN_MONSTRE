@@ -25,6 +25,10 @@ class MonstersController < ApplicationController
 
   def show
     @monster = Monster.find(params[:id])
+    @contract = Contract.new
+    @contract.monster = @monster
+    @contract.user = current_user
+    @contract.battles = 0
   end
 
   def edit
