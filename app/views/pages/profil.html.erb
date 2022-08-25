@@ -3,7 +3,7 @@
 <div id="profil-data" data-controller="modal">
   <p><strong>name : </strong><%= @user.name %>
   <strong>email : </strong> <%= @user.email %></p>
-  <a data-action="click->modal#open">Edit</a>
+  <a id="button-edit" data-action="click->modal#open">Edit</a>
 
   <img id="avatar-profil" src="<%= @user.avatar %>" alt="">
 
