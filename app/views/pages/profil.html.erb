@@ -28,7 +28,7 @@
               </div>
               <%= link_to '❌', decline_path(contract), class: 'decline-contrat' %></li>
             </div>
-            <p><%= contract.battles %> combats restants</p>
+            <p class="card-label monsters-battle"><%= contract.battles %> combats restants</p>
           </div>
         <% end %>
       <% end %>
@@ -59,11 +59,11 @@
             </div>
           </div>
           <% if  monster_status == "true" %>
-            <p class="profil-monsters-off"><%= link_to 'Désactiver',  monster_off_path(monster) %></p>
+            <p class="card-label monsters-off"><%= link_to 'Désactiver',  monster_off_path(monster) %></p>
           <% elsif  monster_status == "false" %>
-            <p class="profil-monsters-on"><%= link_to 'Activer',  monster_on_path(monster) %></p>
+            <p class="card-label monsters-on"><%= link_to 'Activer',  monster_on_path(monster) %></p>
           <% elsif  monster_status == "contrat" %>
-            <p class="profil-monsters-contrat">Sous contrat</p>
+            <p class="card-label monsters-contrat">Sous contrat</p>
           <% end %>
         </div>
       <% end %>
