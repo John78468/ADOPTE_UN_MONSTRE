@@ -1,30 +1,41 @@
-<div class="container" style="text-align: center">
-  <div class="container-monster-infos" style="border: 1px solid black; border-radius: 5px; padding: 20px">
+<div class="container-monster">
+  <% owner = User.find(@monster.user_id) %>
+  <div class="monster-banner" style='background-image: url("http://onepage.dropagence.fr/game/place/game-background-<%= rand(1..5) %>.png");'>
     <h1><%= @monster.name %></h1>
-    <p>Espèce : <%= @monster.specie %></p>
-    <p>Description : <%= @monster.description %></p>
-    <%= image_tag('http://onepage.dropagence.fr/game/gobelin.png', width:"450px")  %>
-    <p>Coût : <%= @monster.price %></p>
-  </div><br>
-
-  <div class="buttons">
-    <div class="btn-location" style="border: 1px solid black; border-radius: 5px; padding: 10px; background-color: whitesmoke;text-decoration: none">
-      <%= link_to "Louer le monstre", new_monster_contract_path(@monster) %>
+    <h2><%= @monster.level %></h2>
+    <%= cl_image_tag(@monster.image.key, width:"450px")  %>
+  </div>
+  <div class="monster-body">
+    <div class="info">
+      <h2>Informations</h2>
+      <p><strong><%= @monster.specie.capitalize %> - niveau <%= @monster.level %> - <%= @monster.price %> pc - proposé par <%= owner.name %> </strong></p>
+      <p><%= @monster.description %></p></p>
     </div>
+    <div class="monster-contract">
+      <h2>Contrat</h2>
+      <p>Sélectionner le nombre de combats du contrat</p>
 
-    <br>
+      <% class_contrat = "contrat-non" %>
+      <% owner.enlisted_monsters.each do |contract| %>
+        <% if contract.monster_id == @monster.id && contract.actif == true %>
+          <% class_contrat = "contrat-oui" %>
+        <% end %>
+      <% end %>
 
-    <div class="btn-annulation" style="border: 1px solid black; border-radius: 5px; padding: 10px; background-color: whitesmoke;text-decoration: none">
-      <%= link_to "Annuler la location",
-        monster_path(@monster),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    </div>
+      <% if class_contrat == "contrat-oui" %>
+          <p class="alert-monster">Ce monstre est déjà sous contrat !</p>
+      <% else %>
+        <% if current_user.coin > @monster.price %>
+          <%= simple_form_for [@monster, @contract] do |f| %>
+            <%= f.input :battles, label: 'Nombre de combats' %>
+            <%= f.button :submit, value: 'Engager !' %>
+          <% end %>
+        <% else %>
+          <p class="alert-monster">Désolé vous n'avez pas assez de pogs !</p>
+        <% end %>
+      <% end %>
 
-    <br>
-
-    <div class="btn-retour" style="border: 1px solid black; border-radius: 5px; padding: 10px; background-color: whitesmoke;text-decoration: none">
-      <%= link_to "Retour", monsters_path %>
     </div>
   </div>
+
 </div>
