@@ -1,19 +1,31 @@
 <div class="text-center">
-  <%= image_tag('http://onepage.dropagence.fr/game/logobm.png', width:"750px") %>
+  <%= image_tag('http://onepage.dropagence.fr/game/place/logo-mp.png', width:"750px") %>
 </div>
 
-<div class="card-product">
-    <% @monsters.each do |monster| %>
-
-    <div class="border my-3 p-5 text-center">
-      <%= image_tag('http://onepage.dropagence.fr/game/gobelin.png', width:"450px")  %>
-      <div class="card-product-infos">
-        <%= link_to monster_path(monster) do %>
-          <p class="display-5 text-decoration-none">
-            <%= monster.name %>
-          </p>
-        <% end %>
-      </div>
-      </div>
-    <% end %>
+<form action="/monsters" method="get" class="d-flex">
+  <select name="specie" id="specie-select" class="">
+      <option value="">Tous</option>
+      <option value="golem">Golem</option>
+      <option value="garou">Garou</option>
+      <option value="troll">Troll</option>
+  </select>
+  <div class="form-example">
+    <input type="submit" value="Subscribe!">
   </div>
+</form>
+
+<div class="display-cards">
+  <% @monsters.each do |monster| %>
+    <div class="card_container">
+      <div class="card">
+        <%= cl_image_tag(monster.image.key, width:"180px") %>
+        <div class="monster-info">
+          <span class="monster-info-top"><%= monster.name %></span>
+          <span class="monster-info-bottom">Lv <%= monster.level %> - <%= monster.price %> pc</span>
+        </div>
+          <%#= link_to monster_path(monster) do %>
+          <%# end %>
+      </div>
+    </div>
+  <% end %>
+</div>
