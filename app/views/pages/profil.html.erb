@@ -4,7 +4,7 @@
    <strong>email : </strong> <%= @user.email %></p>
    <p>Edit</p>
 
-<img id="avatar-profil" src="<%= @user.avatar %>" alt="">
+<%= cl_image_tag @user.avatar.key  %>
 
 <style>.enlist { color:red }</style>
 
