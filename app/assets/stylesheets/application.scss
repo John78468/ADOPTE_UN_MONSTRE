@@ -19,6 +19,174 @@ a, a:hover {
   color: black;
 }
 
+.gap {
+  display: block;
+  padding: 50px;
+}
+
+.head-pages {
+  width: 59%;
+  margin-bottom: 50px;
+  padding-left: 18px;
+}
+
+.back-link {
+  font-weight: bold;
+  color: #499A90
+}
+
+form .btn {
+  border: 1px solid;
+}
+
+form#new_user {
+  padding-left: 20px;
+}
+
+.nav-log {
+  color: white;
+}
+
+// profil
+
+.profil-contrat, .profil-monsters {
+  margin-bottom: 30px;
+}
+
+.profil-info {
+  margin-bottom: 60px;
+}
+
+.profil-info-content {
+  margin-left: 50px;
+}
+
+.profil-contrat h2, .profil-monsters h2 {
+  padding-left: 20px;
+  font-weight: bold;
+  color: #499A90;
+}
+
+.profil-info {
+  display: flex;
+  align-items: center;
+}
+
+.profil-info-avatar {
+  border-radius: 50%;
+  border: 5px solid #499A90;
+  margin-left: 20px
+}
+
+// show
+
+.monster-banner {
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  min-height: 550px;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  padding: 25px 0;
+  border-radius: 5px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+}
+
+.monster-banner img {
+  margin-top: -80px
+}
+
+.monster-banner h1, .monster-banner h2 {
+    color: white;
+    font-size: 50px;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.monster-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.monster-body > div {
+  display: flex;
+  height: 300px;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #499A90;
+  color: white;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  padding: 40px;
+  margin-top: 25px;
+  position: relative
+}
+
+.monster-body-info {
+  width: 63.5%;
+}
+
+.monster-body-info p {
+  max-width: 70%;
+}
+
+.monster-body-info #tuto {
+  position: absolute;
+  width: 200px;
+  right: 15px;
+  top: 50px;
+}
+
+.monster-body-contract .form-control {
+  max-width: 200px;
+  margin: auto;
+}
+
+.monster-body-contract {
+  text-align: center;
+}
+
+.monster-body-contract form .btn:hover {
+  border: 1px solid white;
+}
+
+.monster-body-info .monster-body-flex {
+  padding-left: 15px;
+}
+
+// index : select search
+
+.specie-select {
+  display: flex;
+  padding: 0 18px 20px
+}
+
+.specie-select input, .specie-select select {
+  height: 40px;
+  appearance: button;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.specie-select input {
+  width: 200px;
+  color: #fff;
+  background-color: #499A90;
+}
+
+.specie-select select {
+  width: 250px;
+  border: 1px solid grey;
+  color: #499A90;
+  background-color: white;
+  margin-right: 20px
+}
+
 // Tarek : _home
 
 .display-2 {
