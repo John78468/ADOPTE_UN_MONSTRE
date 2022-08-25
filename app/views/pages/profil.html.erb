@@ -2,7 +2,7 @@
 
 
 <%= cl_image_tag @user.avatar.key, :transformation=>[
-  {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"},
+  {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.3, :zoom=>0.7, :crop=>"thumb"},
   {:radius=>"max"},
   {:color=>"green", :effect=>"outline"},
   {:color=>"grey", :effect=>"shadow", :x=>30, :y=>55}
