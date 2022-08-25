@@ -1,6 +1,12 @@
 class MonstersController < ApplicationController
   def index
-    @monsters = Monster.all
+    # params['specie'].present? && params['specie'] != "all" ? @specie = params['specie'] : @specie = ['golem', 'garou', 'troll']
+    @specie = search('specie', ['golem', 'garou', 'troll'])
+    # @level = search('level', 0)
+    # @price = search('price', 0)
+
+    @monsters = Monster.where(actif: true, specie: @specie)
+    # @monsters = Monster.where(actif: true, specie: @specie).where("level < ?", @level).where("price < ?", @price)
   end
 
   def new
@@ -45,5 +51,14 @@ class MonstersController < ApplicationController
 
   def monster_params
     params.require(:monster).permit(:name, :specie, :description, :image, :price)
+  end
+
+  def search(val, output)
+    if params[val].present? && !params[val].nil?
+      @result = params[val]
+    else
+      @result = output
+    end
+    return @result
   end
 end
