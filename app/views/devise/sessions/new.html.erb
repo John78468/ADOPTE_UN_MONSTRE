@@ -1,4 +1,7 @@
-<h2>Log in</h2>
+<div class="head-pages">
+  <h1>Bienvnue sur Monster Place !</h1>
+  <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
   <div class="form-inputs">
@@ -17,4 +20,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
