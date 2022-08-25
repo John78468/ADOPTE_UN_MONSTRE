@@ -24,3 +24,13 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+.logo-footer{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 480%;
+  left: 50%;
+  height: 105px;
+  width: 200px;
+  object-fit: contain;
+}

@@ -7,7 +7,6 @@
             <% if user_signed_in? %>
               <li class="nav-item dropdown">
                 <div class="d-flex align-items-center">
-                  <p class="pe-3 m-0">Hello <%= current_user.name %></p>
                   <div>
                     <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.avatar.key %>" />
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -32,5 +31,7 @@
       </div>
     </div>
   </div>
-  <%= image_tag "logo_mp.png", class:"position-absolute logo-navbar"%>
+  <%= link_to root_path do %>
+    <%= image_tag "logo_mp.png", class:"position-absolute logo-navbar"%>
+  <% end %>
 </div>
