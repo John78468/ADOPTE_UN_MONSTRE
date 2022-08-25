@@ -29,7 +29,8 @@ class ContractsController < ApplicationController
   def decline
     @contract = Contract.find(params[:id])
     @contract.actif = false
-    redirect_to profil_path(current_user) if @contract.save
+    @contract.save
+    redirect_to profil_path(current_user)
   end
 
   private
@@ -37,4 +38,5 @@ class ContractsController < ApplicationController
   def contract_params
     params.require(:contract).permit(:battles, :actif, :user_id, :monster_id)
   end
+
 end
