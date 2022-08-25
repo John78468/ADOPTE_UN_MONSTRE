@@ -8,9 +8,9 @@
 require 'faker'
 require "open-uri"
 
-User.destroy_all
-Monster.destroy_all
 Contract.destroy_all
+Monster.destroy_all
+User.destroy_all
 
 puts "Creating DataBase"
 puts "Creating Ilyes_user....bip bip....."
@@ -119,14 +119,14 @@ tarek_monster1.save
 puts "Profile Tarek_user.......has been created."
 
 Contract.create!(
-  battles: Faker::Commerce.price(range: 0..5),
+  battles: Faker::Commerce.price(range: 0..5).to_i,
   actif: true,
   monster_id: thibault_monster1.id,
   user_id: ilyes_user.id
 )
 
 Contract.create!(
-  battles: Faker::Commerce.price(range: 0..5),
+  battles: Faker::Commerce.price(range: 0..5).to_i,
   actif: true,
   monster_id: tarek_monster1.id,
   user_id: ilyes_user.id

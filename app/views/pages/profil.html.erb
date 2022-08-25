@@ -1,4 +1,9 @@
-<h1>profil</h1>
+
+<h1>Mon profil</h1>
+<p><strong>name : </strong><%= @user.name %>
+<p></p>
+   <strong>email : </strong> <%= @user.email %></p>
+   <p>Edit</p>
 
 <div id="profil-data" data-controller="modal">
   <p><strong>name : </strong><%= @user.name %>
@@ -49,12 +54,23 @@
   </div>
 </div>
 
-<h2><strong>Mes Contrats</strong></h2>
-
 <style>.enlist { color:red }</style>
 
+<div class="card-product">
+  <h2><strong>Mes Contrats</strong></h2>
+    <div class="border my-3 p-5">
+      <ul>
+        <% @user.contracts.each do |contract| %>
+          <% if contract.actif == true %>
+            <li><%= contract.monster.name %> - <%= link_to 'decline', decline_path(contract) %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+</div>
+
 <h2><strong>Mes Monstres</strong></h2>
-<p>Add</p>
+
 <% if @user.monsters.first.nil? %>
   <p>No monsters</p>
 <% else %>

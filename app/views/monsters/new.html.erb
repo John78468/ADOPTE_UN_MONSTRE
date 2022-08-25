@@ -1,7 +1,8 @@
-<div class="container" style="text-align: center">
 
-  <h1>Monsters#new</h1>
-  <p>Find me in app/views/monsters/new.html.erb</p>
+
+  <h1>Ici, vous pouvez ajouter votre monstre</h1>
+
+
   <%= simple_form_for @monster do |f| %>
     <%= f.input :name, label: "nom" %>
     <%= f.input :specie, label: "espece" %>
@@ -10,5 +11,3 @@
     <%= f.input :image, as: :file   %>
     <%= f.button :submit %>
   <% end %>
-
-</div>
