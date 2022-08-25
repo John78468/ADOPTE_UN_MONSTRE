@@ -8,7 +8,8 @@
 
 <style>.enlist { color:red }</style>
 
-<div class="card-product">
+<% if @user.contracts.where(actif: true).count > 0 %>
+<div class="card-product"  >
   <h2><strong>Mes Contrats</strong></h2>
     <div class="border my-3 p-5">
       <ul>
@@ -20,6 +21,7 @@
       </ul>
     </div>
 </div>
+<% end %>
 
 <h2><strong>Mes Monstres</strong></h2>
 
