@@ -1,10 +1,55 @@
-<h1>Mon profil</h1>
-<p><strong>name : </strong><%= @user.name %>
-<p></p>
-   <strong>email : </strong> <%= @user.email %></p>
-   <p>Edit</p>
 
-<%= cl_image_tag @user.avatar.key  %>
+<h1>Mon profil</h1>
+
+<div id="profil-data" data-controller="modal">
+  <p><strong>name : </strong><%= @user.name %>
+  <p></p>
+  <strong>email : </strong> <%= @user.email %></p>
+  <a id="button-edit" data-action="click->modal#open">Edit</a>
+
+  <%= cl_image_tag @user.avatar.key  %>
+
+  <div class="modal" data-modal-target="modal">
+    <a data-action="click->modal#close">X</a>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" }%>
+
+        <%= f.input :avatar, as: :file,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "avatar" }%>
+
+        <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <style>.enlist { color:red }</style>
 

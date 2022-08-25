@@ -45,3 +45,34 @@
   margin-bottom: 3rem;
   transition: all 0.5s ease-out;
 }
+.logo-navbar{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 100%;
+  left: 50%;
+  height: 150px;
+  width: 200px;
+  object-fit: contain;
+  transition: all 0.1s ease-in;
+  &:hover{
+    height: 200px;
+    width: 210px;
+  }
+}
+
+.navbar{
+  position: relative;
+  background: #499A90;
+}
+
+#navbarDropdown {
+  cursor: pointer;
+}
+
+#voir-monstre a{
+  color: white;
+}
+
+.pe-3{
+  font-family: cursive;
+}
