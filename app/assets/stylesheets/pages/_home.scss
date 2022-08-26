@@ -4,6 +4,71 @@
   background-image: url("http://onepage.dropagence.fr/game/place/background-1.png");
   background-size: cover;
 }
+.button {
+  position:relative;
+}
+
+
+.logo {
+  transform: scale(0.9);
+  animation: bopB 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+  infinite alternate;
+}
+
+@keyframes bopB {
+  0% {
+    transform: scale(0.9);
+  }
+  80%,
+  100% {
+    transform: scale(1) rotateZ(-3deg);
+  }
+}
+
+
+
+@keyframes play {
+  from { background-position: 0px;}
+  to   { background-position: -6000px;}
+}
+.personnage1 {
+  position: absolute;
+  top:-450px;
+  bottom: 0;
+  left:1400px;
+  right:0;
+  width: 600px;
+  height: 600px;
+  margin-left: 20px;
+  background: url('https://www.zupimages.net/up/22/34/txnl.png') right;
+  animation: play 1s steps(10) infinite, avance 8s linear;
+}
+@keyframes avance {
+  from { transform: translate(280px, 0);   }
+  to   { transform: translate(-550px, 0); }
+}
+
+@keyframes play2 {
+  from { background-position: 0px;}
+  to   { background-position: -6000px;}
+}
+.personnage2 {
+  position: absolute;
+  top:-450px;
+  bottom: 0;
+  left:-600px;
+  right:0;
+  width: 600px;
+  height: 600px;
+  margin-left: 0;
+  background: url('https://zupimages.net/up/22/34/0cya.png') right;
+  animation: play2 1s steps(10) infinite, avance2 8s linear;
+}
+@keyframes avance2 {
+  from { transform: translate(-280px, 0);   }
+  to   { transform: translate(400px, 0); }
+}
+
 
 .button a {
   width : 40%;
