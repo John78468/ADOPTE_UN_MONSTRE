@@ -4,14 +4,14 @@
   <div class="monster-banner" style='background-image: url("http://onepage.dropagence.fr/game/place/game-background-<%= rand(1..5) %>.png");'>
     <div class="monster-banner-info">
       <h1><%= @monster.name %></h1>
-      <h2><%= @monster.level %></h2>
+      <h2>Lv <%= @monster.level %> - <%= @monster.price %> pc</h2>
       <%= cl_image_tag(@monster.image.key, width:"450px")  %>
     </div>
   </div>
   <div class="monster-body">
     <div class="monster-body-info">
       <div class="monster-body-flex">
-        <h2>Informations</h2>
+        <h2 class="title-light">Informations</h2>
         <p><strong><%= @monster.specie.capitalize %> - niveau <%= @monster.level %> - <%= @monster.price %> pc - proposé par <%= owner.name %> </strong></p>
         <p><%= @monster.description %></p>
         <%= image_tag 'http://onepage.dropagence.fr/game/place/tuto.png', id: 'tuto' %>
@@ -19,7 +19,7 @@
     </div>
     <div class="monster-body-contract">
       <div class="monster-body-flex">
-        <h2>Contrat</h2>
+        <h2 class="title-light">Contrat</h2>
         <p>Sélectionner le nombre de combats du contrat</p>
 
         <% class_contrat = "contrat-non" %>
