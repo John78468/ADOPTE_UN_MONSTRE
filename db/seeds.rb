@@ -282,28 +282,28 @@ tarek_monster4.save
 puts "Profile Tarek_user.......has been created."
 
 Contract.create!(
-  battles: Faker::Commerce.price(range: 0..5).to_i,
+  battles: Faker::Commerce.price(range: 1..5).to_i,
   actif: true,
   monster_id: thibault_monster2.id,
   user_id: ilyes_user.id
 )
 
 Contract.create!(
-  battles: Faker::Commerce.price(range: 0..5).to_i,
+  battles: Faker::Commerce.price(range: 1..5).to_i,
   actif: true,
   monster_id: tarek_monster3.id,
   user_id: ilyes_user.id
 )
 
 Contract.create!(
-  battles: Faker::Commerce.price(range: 0..5).to_i,
+  battles: Faker::Commerce.price(range: 1..5).to_i,
   actif: true,
   monster_id: tarek_monster1.id,
   user_id: john_user.id
 )
 
 Contract.create!(
-  battles: Faker::Commerce.price(range: 0..5).to_i,
+  battles: Faker::Commerce.price(range: 1..5).to_i,
   actif: true,
   monster_id: ilyes_monster2.id,
   user_id: thibault_user.id
