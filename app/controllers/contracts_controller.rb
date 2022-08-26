@@ -32,8 +32,13 @@ class ContractsController < ApplicationController
   def decline
     @contract = Contract.find(params[:id])
     @contract.actif = false
-    @contract.save
-    redirect_to profil_path(current_user)
+    monster = @contract.monster
+    user = current_user
+    if @contract.save
+      user.coin = user.coin + (monster.price * @contract.battles)
+      user.save
+      redirect_to profil_path(current_user)
+    end
   end
 
   private
