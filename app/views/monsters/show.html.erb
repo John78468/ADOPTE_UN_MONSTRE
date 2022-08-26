@@ -11,7 +11,7 @@
   <div class="monster-body">
     <div class="monster-body-info">
       <div class="monster-body-flex">
-        <h2 class="title-light">Informations</h2>
+        <h1 class="title-light">Informations</h1>
         <p><strong><%= @monster.specie.capitalize %> - niveau <%= @monster.level %> - <%= @monster.price %> pc - proposé par <%= owner.name %> </strong></p>
         <p><%= @monster.description %></p>
         <%= image_tag 'http://onepage.dropagence.fr/game/place/tuto.png', id: 'tuto' %>
@@ -19,8 +19,7 @@
     </div>
     <div class="monster-body-contract">
       <div class="monster-body-flex">
-        <h2 class="title-light">Contrat</h2>
-        <p>Sélectionner le nombre de combats du contrat</p>
+        <h1 class="title-light">Contrat</h1>
 
         <% class_contrat = "contrat-non" %>
         <% owner.enlisted_monsters.each do |contract| %>
