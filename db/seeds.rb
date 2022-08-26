@@ -131,13 +131,27 @@ john_monster3 = Monster.new(
   name: Faker::Games::Pokemon.name,
   specie: specie_john_monster3.to_s,
   description: Faker::Lorem.sentence(word_count: 15),
-  actif: true,
+  actif: false,
   level: 3,
   price: 2,
   user_id: john_user.id
 )
 john_monster3.image.attach(io: avatar_john_monster3, filename: "#{john_monster3.name}.png", content_type: 'image/png')
 john_monster3.save
+
+specie_john_monster4 = "garou"
+avatar_john_monster4 = URI.open("#{base_url}/#{specie_john_monster4}-1-2.png")
+john_monster4 = Monster.new(
+  name: Faker::Games::Pokemon.name,
+  specie: specie_john_monster4.to_s,
+  description: Faker::Lorem.sentence(word_count: 15),
+  actif: true,
+  level: 6,
+  price: 4,
+  user_id: john_user.id
+)
+john_monster4.image.attach(io: avatar_john_monster4, filename: "#{john_monster4.name}.png", content_type: 'image/png')
+john_monster4.save
 
 puts "Profile Jonathan_user.......has been created."
 puts "Creating Thibault_user....bip bip....."
@@ -215,7 +229,7 @@ tarek_monster1 = Monster.new(
   name: Faker::Games::Pokemon.name,
   specie: specie_tarek_monster1.to_s,
   description: Faker::Lorem.sentence(word_count: 15),
-  actif: false,
+  actif: true,
   level: 8,
   price: 5,
   user_id: tarek_user.id
@@ -243,13 +257,27 @@ tarek_monster3 = Monster.new(
   name: Faker::Games::Pokemon.name,
   specie: specie_tarek_monster3.to_s,
   description: Faker::Lorem.sentence(word_count: 15),
-  actif: false,
+  actif: true,
   level: 7,
   price: 6,
   user_id: tarek_user.id
 )
 tarek_monster3.image.attach(io: avatar_tarek_monster3, filename: "#{tarek_monster3.name}.png", content_type: 'image/png')
 tarek_monster3.save
+
+specie_tarek_monster4 = "troll"
+avatar_tarek_monster4 = URI.open("#{base_url}/#{specie_tarek_monster4}-2-1.png")
+tarek_monster4 = Monster.new(
+  name: Faker::Games::Pokemon.name,
+  specie: specie_tarek_monster4.to_s,
+  description: Faker::Lorem.sentence(word_count: 15),
+  actif: false,
+  level: 11,
+  price: 10,
+  user_id: tarek_user.id
+)
+tarek_monster4.image.attach(io: avatar_tarek_monster4, filename: "#{tarek_monster4.name}.png", content_type: 'image/png')
+tarek_monster4.save
 
 puts "Profile Tarek_user.......has been created."
 

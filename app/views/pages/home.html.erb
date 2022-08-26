@@ -1,18 +1,17 @@
 <body id="home">
   <div class= "text-center">
-    <%= image_tag('http://onepage.dropagence.fr/game/place/logo-mp.png', width:"450px") %><br>
+    <img class="logo" src="http://onepage.dropagence.fr/game/place/logo-mp.png" width="550px"><br>
     <div class="text">
-      <p>Grand tournois en vue ?<br>
-      Envie de tester vos talents de stratèges ?<br>
-      Besoin d'un monstre rapidement pour jouer avec vos amis ?<br>
-      Monster Place est le service qu'il vous faut !</p>
+      <h2 class="title-light">Recrutez de nouveaux monstres<br>et accédez au sommet de Battle Monster !</h2>
     </div>
 
     <div class="button">
-    <% if user_signed_in? %>
-      <%= link_to "Rechercher monstre", monsters_path  %>
-    <% else %>
-      <%= link_to "Connecter mon compte Battle Monster", monsters_path %>
-    <% end %>
+      <% if user_signed_in? %>
+        <%= link_to "Rechercher un Battle Monster", monsters_path  %>
+      <% else %>
+        <%= link_to "Connecter mon compte Battle Monster", monsters_path %>
+      <% end %>
+      <div class="personnage1-walk">
     </div>
+  </div>
 </body>
