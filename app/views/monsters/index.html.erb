@@ -41,3 +41,19 @@
     <% end %>
   <% end %>
 </div>
+
+<% if cookies[:display] %>
+  <style>.pop { display : none } </style>
+<% else %>
+  <div class="pop">
+    <div class="pop-content">
+      <span class="pop-close">❌</span>
+      <%= image_tag('http://onepage.dropagence.fr/game/place/pop.png', width:"800px") %>
+    </div>
+  </div>
+  <script>
+    function hide() { document.querySelector('.pop').style.display = "none"; }
+    document.querySelector('.pop-close').addEventListener("click", hide)
+  </script>
+  <% cookies[:display] = 'on' %>
+<% end %>
