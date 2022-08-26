@@ -1,7 +1,6 @@
 <h1>Vous avez choisi <%= @monster.name %></h1>
 <br><br>
  <%= simple_form_for [@monster, @contract] do |f| %>
-    <%= f.input :battles, label: "Veuillez choisir le nombre de bataille pour la location" %>
+    <%= f.input :battle, input_html: { min: 0 }  label: "Veuillez choisir le nombre de bataille pour la location" %>
     <%= f.button :submit %>
   <% end %>
-

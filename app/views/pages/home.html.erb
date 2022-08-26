@@ -4,17 +4,14 @@
     <div class="text">
       <h2 class="title-light">Recrutez de nouveaux monstres<br>et accédez au sommet de Battle Monster !</h2>
     </div>
+
     <div class="button">
-      <%= link_to "Connecter mon compte Battle Monster", monsters_path %>
+      <% if user_signed_in? %>
+        <%= link_to "Rechercher un Battle Monster", monsters_path  %>
+      <% else %>
+        <%= link_to "Connecter mon compte Battle Monster", monsters_path %>
+      <% end %>
       <div class="personnage1-walk">
-          <%# <img src="https://www.zupimages.net/up/22/34/txnl.png"> %>
-      </div>
     </div>
   </div>
-  <%# <script>
-        document.querySelector(".personnage1").classList.add('.personnage1-walk');
-        document.querySelector(".personnage1-walk").addEventListener("animationend", removeClass);
-        document.querySelector(".personnage1").classList.remove('.personnage1-walk');
-        document.querySelector(".personnage1").classList.add('.personnage1-wait');
-  </script> %>
 </body>
