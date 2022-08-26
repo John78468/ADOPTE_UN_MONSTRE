@@ -1,14 +1,20 @@
 <body id="home">
   <div class= "text-center">
-    <%= image_tag('http://onepage.dropagence.fr/game/place/logo-mp.png', width:"450px") %><br>
+    <img class="logo" src="http://onepage.dropagence.fr/game/place/logo-mp.png" width="550px"><br>
     <div class="text">
-      <p>Grand tournois en vue ?<br>
-      Envie de tester vos talents de stratèges ?<br>
-      Besoin d'un monstre rapidement pour jouer avec vos amis ?<br>
-      Monster Place est le service qu'il vous faut !</p>
+      <h2 class="title-light">Recrutez de nouveaux monstres<br>et accédez au sommet de Battle Monster !</h2>
     </div>
     <div class="button">
       <%= link_to "Connecter mon compte Battle Monster", monsters_path %>
+      <div class="personnage1-walk">
+          <%# <img src="https://www.zupimages.net/up/22/34/txnl.png"> %>
+      </div>
     </div>
   </div>
+  <%# <script>
+        document.querySelector(".personnage1").classList.add('.personnage1-walk');
+        document.querySelector(".personnage1-walk").addEventListener("animationend", removeClass);
+        document.querySelector(".personnage1").classList.remove('.personnage1-walk');
+        document.querySelector(".personnage1").classList.add('.personnage1-wait');
+  </script> %>
 </body>

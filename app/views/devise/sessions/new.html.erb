@@ -1,6 +1,6 @@
 <div class="head-pages">
-  <h1>Bienvenu sur Monster Place !</h1>
-  <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+  <h1>Bienvenue sur Monster Place !</h1>
+  <p>Connectez-vous avec vos identifiants Battle Monster<br>pour bénéficier de l'expérience Monster Place !</p>
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Connexion" %>
   </div>
 <% end %>
 

@@ -41,7 +41,7 @@ label {
 }
 
 p {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Helvetica", "sans-serif";
   font-size:18px;
 }
 
@@ -55,6 +55,9 @@ a {
   font-family: 'Teko', sans-serif;
   font-size: 24px;
   font-weight: bold;
+}
+.nav-log{
+  visibility: hidden;
 }
 
 select {
@@ -74,7 +77,7 @@ select {
 #voir-monstre{
   color: white;
   font-family: teko, sans-serif;
-  font-size: 25px;
+  font-size: 24px;
   display: inline-block;
   position: relative;
 }
